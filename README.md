@@ -2,6 +2,21 @@
 
 A Python CLI tool for displaying directory structure as ASCII art trees in your terminal.
 
+## Quick Start
+
+Run instantly without installation using [uvx](https://docs.astral.sh/uv/):
+
+```bash
+# Display current directory
+uvx --from slither-cli slither
+
+# Display specific directory
+uvx --from slither-cli slither /path/to/dir
+
+# Show help
+uvx --from slither-cli slither --help
+```
+
 ## Features
 
 - Display directory trees with beautiful ASCII art formatting
@@ -14,10 +29,27 @@ A Python CLI tool for displaying directory structure as ASCII art trees in your 
 
 ## Installation
 
-### Prerequisites
+### Run without installing (recommended)
 
-- Python 3.13 or higher
-- [uv](https://docs.astral.sh/uv/) package manager
+Use [uvx](https://docs.astral.sh/uv/) to run slither-cli without installation:
+
+```bash
+uvx --from slither-cli slither
+```
+
+### Install with pip
+
+```bash
+pip install slither-cli
+slither
+```
+
+### Install with uv
+
+```bash
+uv pip install slither-cli
+slither
+```
 
 ### Install from source
 
@@ -25,49 +57,56 @@ A Python CLI tool for displaying directory structure as ASCII art trees in your 
 git clone https://github.com/jesshart/slither-cli.git
 cd slither-cli
 uv sync
+uv run slither
 ```
 
-## Usage
+## Usage Examples
 
-### Basic usage
+### Using uvx (no installation required)
 
 ```bash
 # Display current directory
-uv run slither
+uvx --from slither-cli slither
 
 # Display specific directory
-uv run slither /path/to/dir
-```
+uvx --from slither-cli slither /path/to/dir
 
-### Options
-
-```bash
 # Limit depth to 2 levels
-uv run slither -L 2
+uvx --from slither-cli slither -L 2
 
 # Show hidden files
-uv run slither -a
+uvx --from slither-cli slither -a
 
 # Show directories only
-uv run slither -d
+uvx --from slither-cli slither -d
 
 # Show only Python files
-uv run slither -P "*.py"
+uvx --from slither-cli slither -P "*.py"
 
 # Ignore compiled Python files
-uv run slither -I "*.pyc"
+uvx --from slither-cli slither -I "*.pyc"
 
 # Show file sizes in human-readable format
-uv run slither -s -h
+uvx --from slither-cli slither -s -h
 
 # Reverse sort order
-uv run slither -r
+uvx --from slither-cli slither -r
 
 # Combine multiple options
-uv run slither -L 3 -a -P "*.py" -s -h
+uvx --from slither-cli slither -L 3 -a -P "*.py" -s -h
 ```
 
-### All available options
+### Using installed command
+
+If you installed with pip or uv, simply use `slither`:
+
+```bash
+slither
+slither /path/to/dir
+slither -L 2 -a -s -h
+```
+
+## All Available Options
 
 | Option | Long form | Description |
 |--------|-----------|-------------|
