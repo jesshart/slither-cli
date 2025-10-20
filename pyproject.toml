@@ -1,0 +1,15 @@
+[project]
+name = "slither-cli"
+version = "0.1.0"
+description = "Display directory structure as a tree in your terminal"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer>=0.12.0",
+]
+
+[project.scripts]
+slither = "slither.cli:app"
+
+[tool.uv]
+package = true
